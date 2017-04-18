@@ -1,12 +1,12 @@
 import { compose, createStore, applyMiddleware } from 'redux';
-// import { browserHistory } from 'react-router';
-// import { syncHistoryWithStore } from 'react-router-redux';
 import { createLogger } from 'redux-logger'
 import rootReducer from './reducers';
-// import logger from 'redux-logger'
+// import { thunk } from 'redux-thunk';
+var thunk = require('redux-thunk').default;
 
 // **logger must be last middleware in chain or it will log thunk and promise not actual actions!
 const middleware = [
+  thunk,
   createLogger()
 ];
 
@@ -18,7 +18,7 @@ const enhancers = compose(
 // Create the store
 export default createStore(
   rootReducer,
-  {},
+  {},   
   enhancers
 );
 

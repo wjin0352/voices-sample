@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
+import shows from '../../modules/findShows/findShowsReducer';
 
 export default combineReducers({
-  fake: () => [],
-  routing: routerReducer
+  form: formReducer,
+  shows: shows
 });
 

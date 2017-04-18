@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import SamplePage from './modules/sample/SamplePage';
+import { Sample, Form } from './components';
+import { FindShows } from './modules';
 
 export default () => (
   <Switch>
-    <Route component={SamplePage} path="/sample" exact/>
+    <Route component={Sample} path="/sample" exact/>
+    <Route component={FindShows} path="/findShows" exact/>
   </Switch>
 )

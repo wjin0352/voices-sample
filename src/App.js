@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { NavBar } from './modules/';
+import { NavBar, Form } from './components';
+import { FindShows } from './modules'
 import './App.css';
-import Route from './Routes';
+import { Route } from 'react-router-dom';
+import Routes from './Routes';
+
 
 const styles = {
   root: {
@@ -15,9 +18,8 @@ const styles = {
 
 const App = () => (
   <div style={styles.root}>
-    <NavBar />
-    <h1>Hello!</h1>
-    <Route/>
+    <NavBar/>
+    <Routes/>
   </div>
 );
 
