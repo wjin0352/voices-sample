@@ -1,13 +1,13 @@
 import { compose, createStore, applyMiddleware } from 'redux';
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import logger from 'redux-logger';
+// import { browserHistory } from 'react-router';
+// import { syncHistoryWithStore } from 'react-router-redux';
+import { createLogger } from 'redux-logger'
 import rootReducer from './reducers';
-
+// import logger from 'redux-logger'
 
 // **logger must be last middleware in chain or it will log thunk and promise not actual actions!
 const middleware = [
-  logger
+  createLogger()
 ];
 
 const enhancers = compose(
@@ -16,15 +16,10 @@ const enhancers = compose(
 );
 
 // Create the store
-
-const store = createStore(
+export default createStore(
   rootReducer,
   {},
   enhancers
 );
 
-// we use this in our react router, to sync the history with the store.
-// export const history = syncHistoryWithStore(browserHistory, store);
-
-export { store };
 

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 export default combineReducers({
-  routing: routerReducer,
-  fake: () => [23,43]
+  fake: () => [],
+  routing: routerReducer
 });
 
