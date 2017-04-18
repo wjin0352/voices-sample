@@ -6,18 +6,18 @@ import { Route } from 'react-router-dom';
 import Routes from './Routes';
 
 
-const styles = {
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    flexDirection: 'column'
-  }
-}
+// const styles = {
+//   root: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     height: '100vh',
+//     flexDirection: 'column'
+//   }
+// }
 
 const App = () => (
-  <div style={styles.root}>
+  <div >
     <NavBar/>
     <Routes/>
   </div>
