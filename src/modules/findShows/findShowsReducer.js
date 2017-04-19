@@ -1,7 +1,8 @@
 import * as actions from './findShowsAction';
 
 const initialState = {
-  data: {}
+  newShows: [{}],
+  showsError: ''
 }
 
 const shows = (state={initialState}, action) => {
