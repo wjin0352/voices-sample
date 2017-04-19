@@ -49,7 +49,7 @@ const styles = {
   },
   floatingLabelFocusStyle: {
     color: blue500,
-  },
+  }
 };
 
 class Form extends Component {
@@ -57,16 +57,24 @@ class Form extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
   return (
-      <MuiThemeProvider>
-        <form className="showsForm" onSubmit={handleSubmit(this.props.getShows)}>
-          <Field 
-            name="showTitle" 
-            component={renderTextField} 
-            type="text" 
-            placeholder="Enter a Title" />
-          <RaisedButton className="showButton" type="submit" label="Submit" />
-        </form>
-      </MuiThemeProvider>
+    <MuiThemeProvider>
+      <form className="showsForm" 
+        onSubmit={handleSubmit(this.props.getShows)}>
+        <Field 
+          name="showTitle" 
+          component={renderTextField} 
+          type="text" 
+          placeholder="Enter a Title"
+          validate={required}/>
+        <RaisedButton className="showButton" type="submit" label="Search" />
+        <RaisedButton
+          type="submit"
+          disabled={pristine || submitting}
+          onClick={reset}
+          label="Clear"
+        />
+      </form>
+    </MuiThemeProvider>
     );
   }
 }
