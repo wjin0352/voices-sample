@@ -16,15 +16,3 @@ render(
   </Provider>,
   document.getElementById('root')
 );
-
-
-/*
-Then for your application, instead of using <BrowserRouter>, you would use the regular <Router> component.
-import history from './history';
-render((
-  <Router history={history}>
-    <App />
-  </Router>
-), holder);
-
-Finally, in your action, you would import that history instance and use it to push the new location*/
