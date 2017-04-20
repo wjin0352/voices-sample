@@ -5,6 +5,9 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import Routes from './Routes';
 
+// For material ui access wrap child components in MuiThemeProvider
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 // const styles = {
 //   root: {
@@ -19,7 +22,9 @@ import Routes from './Routes';
 const App = () => (
   <div >
     <NavBar/>
+    <MuiThemeProvider>
     <Routes/>
+    </MuiThemeProvider>
   </div>
 );
 

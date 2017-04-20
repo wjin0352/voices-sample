@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const Sample = () => (
-  <div>
-    <h2>Hi from Sample Page!</h2>
-  </div>
-);
+class Sample extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Samples page</h1>
+        
+      </div>
+    );
+  }
+}
 
-export default Sample; 
+export default connect(null)(Sample);

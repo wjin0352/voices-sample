@@ -121,3 +121,9 @@ section {
   .showButton {
     margin:1em;
   }
+
+
+/* No Image for Card on sample list page */
+  #no_image {
+    background-color: orange;
+  }

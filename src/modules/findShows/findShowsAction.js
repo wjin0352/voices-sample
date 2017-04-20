@@ -4,7 +4,6 @@ import history from '../history';
 export function getShows(data) {
   // URL: /search/shows?q=:query
   // Example: http://api.tvmaze.com/search/shows?q=girls
-  console.log('data', data);
   const endPoint = `http://api.tvmaze.com/search/shows?q=${data.showTitle}`;
 
   return (dispatch) => {
@@ -12,7 +11,7 @@ export function getShows(data) {
       .then(results => { 
         console.log('RESPONSE: ', results.data);
         dispatch(showsSuccess(results.data));
-        history.push('/sample');
+        history.push('/sampleList');
       })
       .catch(error => { 
         console.log('ERROR: ', error);

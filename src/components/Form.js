@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form' 
 import { getShows } from '../modules/findShows/findShowsAction';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {orange500, blue500} from 'material-ui/styles/colors';
 import {AutoComplete as MUIAutoComplete} from 'material-ui';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -45,10 +44,10 @@ const styles = {
     borderColor: orange500,
   },
   floatingLabelStyle: {
-    color: orange500,
+    color: "#E1BEE7",
   },
   floatingLabelFocusStyle: {
-    color: blue500,
+    color: "#7E57C2",
   }
 };
 
@@ -56,8 +55,7 @@ class Form extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
-  return (
-    <MuiThemeProvider>
+    return (
       <form className="showsForm" 
         onSubmit={handleSubmit(this.props.getShows)}>
         <Field 
@@ -74,7 +72,6 @@ class Form extends Component {
           label="Clear"
         />
       </form>
-    </MuiThemeProvider>
     );
   }
 }
