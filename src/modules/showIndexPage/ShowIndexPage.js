@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { history } from '../history';
+import history from '../history';
 import { GridList, GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -97,7 +97,7 @@ class ShowIndexPage extends Component {
 
   handleClick(tile) {
     console.log('tile: ',tile.show.id);
-    // history.push(`/sample/${tile.show.id}`);
+    history.push(`/showPage/${tile.show.id}`);
     // this.props.location.state, history.pushState(state, url, param)
   }
 

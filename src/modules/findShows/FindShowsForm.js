@@ -54,7 +54,6 @@ const styles = {
 class FindShowsForm extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
-
     return (
       <form className="showsForm" 
         onSubmit={handleSubmit(this.props.getShows)}>

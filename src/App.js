@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { NavBar, Form } from './components';
-import { FindShowsForm } from './modules'
+import { NavBar } from './components';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Routes from './Routes';
