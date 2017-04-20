@@ -1,8 +1,14 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const ShowPage = () => (
-  <div>Show page here!</div>
-);
+class ShowPage extends Component {
+  render() {
+    return (
+      <div>
 
-export default withRouter(ShowPage);
+      </div>
+    );
+  }
+}
+
+export default connect(null)(ShowPage);

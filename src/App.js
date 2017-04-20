@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavBar, Form } from './components';
-import { FindShows } from './modules'
+import { FindShowsForm } from './modules'
 import './App.css';
 import { Route } from 'react-router-dom';
 import Routes from './Routes';
@@ -23,7 +23,7 @@ const App = () => (
   <div >
     <NavBar/>
     <MuiThemeProvider>
-    <Routes/>
+      <Routes/>
     </MuiThemeProvider>
   </div>
 );

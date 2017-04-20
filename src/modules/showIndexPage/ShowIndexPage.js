@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { history } from '../history';
 import { GridList, GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Subheader from 'material-ui/Subheader';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const styles = {
   root: {
@@ -18,13 +22,20 @@ const styles = {
   gridListComplex: {
     width: 500,
     height: 450
+  },
+  button: {
+    marginRight: 20,
   }
 };
 
-class SampleList extends Component {
+class ShowIndexPage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   noResults() {
     return (
-      <div>
+      <div id="no_results_error">
         <h2>Sorry your search returned no results... Try another search</h2>
       </div>
     );
@@ -33,24 +44,24 @@ class SampleList extends Component {
   simpleGridCard(data) {
     return (
       <div>
-          <div style={styles.root}>
-            <GridList
-              cellHeight={300}
-              style={styles.gridListSimple}
-            >
-              <Subheader>December</Subheader>
-              {data.map((tile) => (
-                <GridTile
-                  key={tile.show.id}
-                  title={tile.show.name}
-                  subtitle={<span>by <b>{tile.show.type}</b></span>}
-                  actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                >
-                  { !tile.show.image ? <h1>No Image</h1> : <img src={tile.show.image.original} /> }
-            </GridTile>
-              ))}
-            </GridList>
-          </div>
+        <div style={styles.root}>
+          <GridList
+            cellHeight={300}
+            style={styles.gridListSimple}
+          >
+            <Subheader>December</Subheader>
+            {data.map((tile) => (
+              <GridTile
+                key={tile.show.id}
+                title={tile.show.name}
+                subtitle={<span>by <b>{tile.show.type}</b></span>}
+                actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+              >
+                { !tile.show.image ? <h1>No Image</h1> : <img src={tile.show.image.original} /> }
+              </GridTile>
+            ))}
+          </GridList>
+        </div>
       </div>
     );
   }
@@ -65,6 +76,7 @@ class SampleList extends Component {
           <Subheader>Search results: </Subheader>
           {data.map((tile) => (
             <GridTile
+              onClick={() => this.handleClick(tile)}
               key={tile.show.id}
               title={tile.show.name}
               subtitle={<span>by <b>{tile.show.type}</b></span>}
@@ -83,18 +95,17 @@ class SampleList extends Component {
     );  
   }
 
+  handleClick(tile) {
+    console.log('tile: ',tile.show.id);
+    // history.push(`/sample/${tile.show.id}`);
+    // this.props.location.state, history.pushState(state, url, param)
+  }
+
   render() {
     const data = this.props.showsList;
     return (
-      <div style={styles.root}>
-        <GridList 
-          cols={2}
-          cellHeight={500}
-          padding={1}
-          style={styles.gridListSimpleComplex}
-        >
+      <div>
         { (this.props.showsList) ? (<h3>{this.complexGridCard(data)}</h3>) : this.noResults()}
-        </GridList>
       </div>
     );
   }
@@ -106,4 +117,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SampleList);
+export default connect(mapStateToProps)(ShowIndexPage);

@@ -1,3 +1,5 @@
-import FindShows from './findShows/FindShows';
+import FindShowsForm from './findShows/FindShowsForm';
+import history from './history';
+import ShowIndexPage from './showIndexPage/ShowIndexPage';
 
-export { FindShows };
+export { FindShowsForm, ShowIndexPage, history };

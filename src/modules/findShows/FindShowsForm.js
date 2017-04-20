@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form' 
-import { getShows } from '../modules/findShows/findShowsAction';
+import { getShows } from './findShowsAction';
 import {orange500, blue500} from 'material-ui/styles/colors';
 import {AutoComplete as MUIAutoComplete} from 'material-ui';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -51,7 +51,7 @@ const styles = {
   }
 };
 
-class Form extends Component {
+class FindShowsForm extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
@@ -78,4 +78,4 @@ class Form extends Component {
 
 export default connect(null, { getShows })(reduxForm({
   form: 'form'
-})(Form));
+})(FindShowsForm));

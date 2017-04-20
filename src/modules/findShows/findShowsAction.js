@@ -9,12 +9,10 @@ export function getShows(data) {
   return (dispatch) => {
     axios.get(endPoint)
       .then(results => { 
-        console.log('RESPONSE: ', results.data);
         dispatch(showsSuccess(results.data));
-        history.push('/sampleList');
+        history.push('/showIndex');
       })
       .catch(error => { 
-        console.log('ERROR: ', error);
         dispatch(showsError(error));
         history.push('/')
       })
