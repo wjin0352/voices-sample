@@ -110,12 +110,13 @@ section {
     padding: 1em;
   }
 
-
 /* Shows Form */
   .showsForm {
     width: 60%;
     margin:50px auto;
     text-align: center;
+    border: 1px solid #f3efeb;
+    padding: 2em;
   }
 
   .showButton {
@@ -128,6 +129,14 @@ section {
     background-color: orange;
   }
 
+/* No Search Results error message */
+  #no_results_error {
+    width: 50%;
+    margin: 5em auto;
+    text-align: center;
+  }
+
+/* Show Page component */
   .showCard {
     width:50%;
     margin:4em auto;

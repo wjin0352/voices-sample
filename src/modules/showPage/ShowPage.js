@@ -9,18 +9,9 @@ const styles = {
     width: "50%",
     margin: "5em auto"
   },
-  header: {
-
-  },
-  media: {
-    width: 500,
-    height: 450
-  },
-  title: {
-
-  },
-  text: {
-
+  flatButton: {
+    backgroundColor: "#a4c639",
+    hoverColor: "#8AA62F"
   }
 }
 
@@ -48,8 +39,10 @@ class ShowPage extends Component {
           { plainText ? plainText : "No Summary..." }
         </CardText>
         <CardActions>
-          <FlatButton label="Go Back" onClick={() => history.goBack()}/>
-          <FlatButton label="Action2" />
+          <FlatButton 
+            label="Go Back" 
+            style={styles.flatButton}
+            onClick={() => history.goBack()}/>
         </CardActions>
       </Card>
     );
