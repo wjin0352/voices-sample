@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: voices-sample
+global:
+  application_name: voices-sample
+  default_ec2_keyname: aws-1
+  default_platform: Node.js
+  default_region: us-east-1
+  profile: eb-cli
+  sc: git
