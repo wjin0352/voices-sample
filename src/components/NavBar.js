@@ -8,12 +8,6 @@ const NavBar = () => (
         <a className='menu-btn' href='#' id='js-menu-btn'></a>
         <nav className='page-head-nav' id='js-main-nav'>
           <ul>
-            <li className='home-link'>
-              <Link to="/" >Home</Link>
-            </li>
-            <li>
-              <Link to="/sample">Sample</Link>
-            </li>
             <li>
               <Link to="/findShows">Search Shows</Link>
             </li>

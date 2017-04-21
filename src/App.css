@@ -127,3 +127,8 @@ section {
   #no_image {
     background-color: orange;
   }
+
+  .showCard {
+    width:50%;
+    margin:4em auto;
+  }
