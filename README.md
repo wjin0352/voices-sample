@@ -40,3 +40,7 @@ class BrowserRouter extends React.Component {
 }
 
 export default BrowserRouter
+
+//////////////////////////
+
+I like to use modules folder in my src directory structure since its easier to add on new features and have all component, actions, reducers combines in one easy to find directory.

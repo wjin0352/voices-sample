@@ -18,7 +18,6 @@ const styles = {
 class ShowPage extends Component {
   render() {
     const data = this.props.showsList.find(card => String(card.show.id) == this.props.match.params.id );
-    console.log('data: ', data);
 
     const htmlTagRe = /<\/?[\w\s="/.':;#-\/\?]+>/gi;
     let html = data.show.summary;

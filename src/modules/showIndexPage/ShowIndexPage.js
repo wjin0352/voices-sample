@@ -96,7 +96,6 @@ class ShowIndexPage extends Component {
   }
 
   handleClick(tile) {
-    console.log('tile: ',tile.show.id);
     history.push(`/showPage/${tile.show.id}`);
     // this.props.location.state, history.pushState(state, url, param)
   }

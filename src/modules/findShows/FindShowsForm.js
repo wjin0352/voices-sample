@@ -7,14 +7,7 @@ import {AutoComplete as MUIAutoComplete} from 'material-ui';
 import RaisedButton from 'material-ui/RaisedButton';
 import {
   AutoComplete,
-  Checkbox,
-  DatePicker,
-  TimePicker,
-  RadioButtonGroup,
-  SelectField,
-  Slider,
-  TextField,
-  Toggle
+  TextField
 } from 'redux-form-material-ui';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -24,17 +17,6 @@ injectTapEventPlugin();
 
 // validation functions
 const required = value => (value == null ? 'Required' : undefined);
-
-const renderTextField = ({ ...input, label, meta: {touched, error}, ...custom }) => (
-   <TextField
-      {...input}
-      {...custom}
-      errorText={touched && error}
-      floatingLabelText={input.placeholder}
-      floatingLabelStyle={styles.floatingLabelStyle}
-      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-    />
-);
 
 const styles = {
   errorStyle: {
@@ -50,6 +32,17 @@ const styles = {
     color: "#7E57C2",
   }
 };
+
+const renderTextField = ({ ...input, label, meta: {touched, error}, ...custom }) => (
+   <TextField
+      {...input}
+      {...custom}
+      errorText={touched && error}
+      floatingLabelText={input.placeholder}
+      floatingLabelStyle={styles.floatingLabelStyle}
+      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+    />
+);
 
 class FindShowsForm extends Component {
   render() {
