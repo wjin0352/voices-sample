@@ -4,7 +4,7 @@ import { ShowIndexPage, FindShowsForm, ShowPage } from './modules';
 
 export default () => (
   <Switch>
-    <Route component={FindShowsForm} path="/findShows"/>
+    <Route exact component={FindShowsForm} path="/"/>
     <Route component={ShowIndexPage} path="/showIndex"/>
     <Route component={ShowPage} path="/showPage/:id"/>
   </Switch>

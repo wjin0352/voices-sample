@@ -9,7 +9,7 @@ const NavBar = () => (
         <nav className='page-head-nav' id='js-main-nav'>
           <ul>
             <li>
-              <Link to="/findShows">Search Shows</Link>
+              <Link to="/">Search Shows</Link>
             </li>
           </ul>
         </nav>
